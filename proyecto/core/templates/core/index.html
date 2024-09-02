@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registros de seguridad</title>
-</head>
-<body>
-    
-    <h1>Regtistros de seguridad</h1>
-    <button><a href="{% url 'presos:index' %}">Entrar</a></button>
+{% extends 'core/base.html' %}
 
-</body>
-</html>
+{% block header %}
+    Registros de seguridad
+{% endblock header %}
+
+{% block main %}
+  {% include 'core/componentes/navbar.html' %}
+{% endblock main %}

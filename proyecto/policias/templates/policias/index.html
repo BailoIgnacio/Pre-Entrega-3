@@ -1,3 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Seccion de policias
+{% endblock header %}
+
+{% block main %}
+    <button><a href="">Agregar policia</a></button>
+    <button><a href="">Listar policias</a></button>
+    <button><a href="{% url 'presos:index' %}">Atras</a></button>
+{% endblock main %}
+<header>
+
+</header>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +24,7 @@
     <h1>Seccion de policias</h1>
 
     <form>
-        <a href="">Agregar policia</a>
-        <a href="">Listar policias</a>
-        <button><a href="{% url 'presos:index' %}">Atras</a></button>
+        
     </form>
 
 </body>

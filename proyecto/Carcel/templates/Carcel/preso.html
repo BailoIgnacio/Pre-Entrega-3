@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-</head>
-<body>
-    
-    <h1>Seccion de presos</h1>
+{% extends 'core/base.html' %}
 
-    <form>
-        <a href="">Agregar preso</a>
-        <a href="">Listar presos</a>
-        <button><a href="{% url 'presos:index' %}">Atras</a></button>
-    </form>
+{% block header %}
+    Seccion de presos
+{% endblock header %}
 
-</body>
-</html>
+{% block main %}
+    <button><a href="">Agregar preso</a></button>
+    <button><a href="">Listar presos</a></button>
+    <button><a href="{% url 'presos:index' %}">Atras</a></button>
+{% endblock main %}

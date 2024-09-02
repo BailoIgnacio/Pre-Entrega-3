@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1>Home</h1>
-    <a href="{% url 'policias:index' %}">Policías</a>
-    <a href="{% url 'presos:preso' %}">Presos</a>
-    <a href="">Agregar prision</a>
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Home
+{% endblock header %}
+
+{% block main %}
+    <button><a href="{% url 'policias:index' %}">Policías</a></button>
+    <button><a href="{% url 'presos:preso' %}">Presos</a></button>
+    <button><a href="">Agregar prision</a></button>
     <button><a href="{% url 'core:index' %}">Salir</a></button>
-</body>
-</html>
+{% endblock main %}
+
