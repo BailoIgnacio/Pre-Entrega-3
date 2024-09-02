@@ -8,4 +8,7 @@ def index(request):
 def presos_list(request):
     lista_presos = Presos.objects.all()
     contexto = {"presos" : lista_presos}
-    return render(request, "presos_list.html", contexto)
+    return render(request, "Carcel/presos_list.html", contexto)
+
+def agregar_preso(request):
+    return render(request, "Carcel/preso.html")

@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("carcel/", include("Carcel.urls")),
     path("", include("core.urls")),
+    path("policia/", include("policias.urls"))
 ]

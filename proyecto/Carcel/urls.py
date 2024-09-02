@@ -6,5 +6,6 @@ app_name = "presos"
 
 urlpatterns = [
     path("presos/list", views.presos_list, name="agregar_preso"),
-    path("", views.index, name="index")
+    path("", views.index, name="index"),
+    path("presos/",views.agregar_preso, name="preso")
 ]

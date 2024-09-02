@@ -8,8 +8,8 @@
 <body>
     
     <h1>Home</h1>
-    <a href="">Agregar policia</a>
-    <a href="">Agregar preso</a>
+    <a href="{% url 'policias:index' %}">Policías</a>
+    <a href="{% url 'presos:preso' %}">Presos</a>
     <a href="">Agregar prision</a>
     <button><a href="{% url 'core:index' %}">Salir</a></button>
 </body>
