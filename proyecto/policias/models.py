@@ -9,7 +9,9 @@ class Policia(models.Model):
         return self.nombre
     
     class Meta:
-        verbose_name = "Agregar preso"
-        verbose_name_plural = "Agregar presos"
+        verbose_name = "Agregar policia"
+        verbose_name_plural = "Agregar policias"
+
+
 
     

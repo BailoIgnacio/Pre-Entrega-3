@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Lista de policias registrados
+{% endblock header %}
+
+{% block main %}
+
+{% for policia in policias %}
+    <li>{{ policia.nombre }} {{ policia.apellido }} - Nacimiento: {{ policia.nacimiento }}</li>
+    
+{% endfor %}
+<button><a href="{% url 'policias:index' %}">Atras</a></button>
+{% endblock main %}
+
+
+
+

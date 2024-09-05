@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+Agregar policia
+{% endblock header %}
+
+
+{% block main %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <button type="submit">
+        Enviar
+    </button>
+</form>
+
+
+<button><a href="{% url 'policias:index' %}">Atras</a></button>
+{% endblock main %}

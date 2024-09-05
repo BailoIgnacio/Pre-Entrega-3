@@ -5,27 +5,10 @@
 {% endblock header %}
 
 {% block main %}
-    <button><a href="">Agregar policia</a></button>
-    <button><a href="">Listar policias</a></button>
+    <button><a href="{% url 'policias:policia_create' %}">Agregar policia</a></button>
+    <button><a href="{% url 'policias:policia_listar' %}">Listar policias</a></button>
     <button><a href="{% url 'presos:index' %}">Atras</a></button>
 {% endblock main %}
 <header>
 
-</header>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-</head>
-<body>
-    
-    <h1>Seccion de policias</h1>
 
-    <form>
-        
-    </form>
-
-</body>
-</html>
