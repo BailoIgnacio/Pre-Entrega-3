@@ -27,5 +27,14 @@ class Policia(models.Model):
         verbose_name = "Agregar preso"
         verbose_name_plural = "Agregar presos"
 
+class Prision(models.Model):
+    nombre = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.nombre
+    
+    class Meta:
+        verbose_name = "Agregar prision"
+        verbose_name_plural = "Agregar prisiones"
     
 

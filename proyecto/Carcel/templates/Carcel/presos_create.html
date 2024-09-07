@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Registrar preso
+{% endblock header %}
+
+{% block main %}
+    <form method="post">
+        {{formulario.as_p}}
+        {% csrf_token %}
+        <button type="submit">
+            Registrar
+        </button>
+    </form>
+    <button>
+        <a href="{% url 'presos:preso' %}">Atras</a>
+     </button>
+{% endblock main %}

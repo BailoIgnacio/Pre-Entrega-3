@@ -7,7 +7,7 @@
 {% block main %}
     <button><a href="{% url 'policias:index' %}">Policías</a></button>
     <button><a href="{% url 'presos:preso' %}">Presos</a></button>
-    <button><a href="">Agregar prision</a></button>
+    <button><a href="{% url 'presos:prision' %}">Agregar prision</a></button>
     <button><a href="{% url 'core:index' %}">Salir</a></button>
 {% endblock main %}
 

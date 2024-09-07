@@ -5,7 +5,7 @@
 {% endblock header %}
 
 {% block main %}
-    <button><a href="">Agregar preso</a></button>
-    <button><a href="">Listar presos</a></button>
+    <button><a href="{% url 'presos:presos_create' %}">Agregar preso</a></button>
+    <button><a href="{% url 'presos:presos_list' %}">Listar presos</a></button>
     <button><a href="{% url 'presos:index' %}">Atras</a></button>
 {% endblock main %}

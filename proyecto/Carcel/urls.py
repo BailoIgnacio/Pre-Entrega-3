@@ -5,7 +5,12 @@ from . import views
 app_name = "presos"
 
 urlpatterns = [
-    path("presos/list", views.presos_list, name="agregar_preso"),
     path("", views.index, name="index"),
-    path("presos/",views.agregar_preso, name="preso")
+    path("presos/",views.preso, name="preso"),
+    path("presos/list", views.presos_list, name="agregar_preso"),
+    path("prision",views.prision, name="prision"),
+    path("prision/create", views.prision_create, name="prision_create" ),
+    path("prision/list", views.prision_list, name="prision_list"),
+    path("presos/create", views.presos_create, name="presos_create"),
+    path("presos/list", views.presos_list, name="presos_list")
 ]

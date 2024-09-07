@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block header %}
+    Creacion de prision
+{% endblock header %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">
+            Agregar
+        </button>
+     </form>
+     <button>
+        <a href="{% url 'presos:index' %}">Atras</a>
+     </button>
+{% endblock main %}<form method="post"></form>

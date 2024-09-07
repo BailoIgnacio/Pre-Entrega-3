@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Lista de presos
+{% endblock header %}
+
+{% block main %}
+
+{% for preso in presos %}
+    <li>{{ preso.nombre }}, {{preso.apellido}}</li>
+    
+{% endfor %}
+<button><a href="{% url 'presos:preso' %}">Atras</a></button>
+{% endblock main %}
+

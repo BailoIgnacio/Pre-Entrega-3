@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Agregar carcel
+{% endblock header %}
+
+{% block main %}
+    <button><a href="{% url 'presos:prision_create' %}">Agregar carcel</a></button>
+    <button><a href="{% url 'presos:prision_list' %}">Listar carcel</a></button>
+    <button><a href="{% url 'presos:index' %}">Atras</a></button>
+{% endblock main %}
+<header>
