@@ -35,7 +35,7 @@ def prision_list(request):
         prisiones = Prision.objects.filter(nombre__icontains=consulta)
     else:
         prisiones = Prision.objects.all()
-    contexto = {"prision": prisiones}
+    contexto = {"prisiones": prisiones}
     return render(request, "Carcel/prision_list.html", contexto)
 
 def presos_create(request):

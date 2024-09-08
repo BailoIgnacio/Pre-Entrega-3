@@ -8,8 +8,8 @@
 <form action="{% url 'presos:prision_list' %}" method="get">
     <input type="text" name="q" placeholder="Buscar...">
     <button type="submit">Buscar</button>
-{% for preso in presos %}
-    <li>{{ preso.nombre }} {{ preso.apellido }} - Nacimiento: {{ preso.nacimiento }}</li>
+{% for prision in prisiones %}
+    <li>{{ prision.nombre }}</li>
     
 {% endfor %}
 <button><a href="{% url 'presos:prision' %}">Atras</a></button>
