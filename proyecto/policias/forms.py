@@ -4,7 +4,6 @@ from django.core.exceptions import ValidationError
 class PoliciaForm(forms.ModelForm):
     class Meta:
         model = Policia
-        # fields = ["nombre", "apellido"]
         fields = "__all__"
 
     def clean_nombre(self):
