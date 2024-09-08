@@ -30,7 +30,11 @@ def prision_create(request):
     return render(request, "Carcel/prision_create.html", {"form": form})
 
 def prision_list(request):
-    prisiones = Prision.objects.all()
+    consulta = request.GET.get("q")
+    if consulta:
+        prisiones = Prision.objects.filter(nombre__icontains=consulta)
+    else:
+        prisiones = Prision.objects.all()
     contexto = {"prision": prisiones}
     return render(request, "Carcel/prision_list.html", contexto)
 
@@ -47,7 +51,11 @@ def presos_create(request):
     return render(request,"Carcel/presos_create.html", contexto)
 
 def presos_list(request):
-    presos = Presos.objects.all()
+    consulta = request.GET.get("q")
+    if consulta:
+        presos = Presos.objects.filter(nombre__icontains=consulta)
+    else:
+        presos = Presos.objects.all()
     contexto = {"presos": presos}
-    return render(request, "Carcel/prision_list.html", contexto)
+    return render(request, "Carcel/presos_list.html", contexto)
 

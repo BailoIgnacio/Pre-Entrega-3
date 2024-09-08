@@ -5,11 +5,17 @@
 {% endblock header %}
 
 {% block main %}
+<form action="{% url 'presos:presos_list' %}" method="get">
+    <input type="text" name="q" placeholder="Buscar...">
+    <button type="submit">Buscar</button>
+</form>
 
 {% for preso in presos %}
     <li>{{ preso.nombre }}, {{preso.apellido}}</li>
-    
 {% endfor %}
+
+
+    
 <button><a href="{% url 'presos:preso' %}">Atras</a></button>
 {% endblock main %}
 

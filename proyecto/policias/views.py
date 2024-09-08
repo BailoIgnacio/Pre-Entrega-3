@@ -19,5 +19,9 @@ def policia_create(request):
     return render(request, "policias/policia_create.html", contexto)
 
 def mostrar_policias(request):
-    policias = Policia.objects.all()
+    consulta = request.GET.get("q")
+    if consulta:
+        policias = Policia.objects.filter(nombre__icontains=consulta)
+    else:
+        policias = Policia.objects.all()
     return render(request, 'policias/policia_listar.html', {'policias': policias})
