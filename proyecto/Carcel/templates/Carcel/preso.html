@@ -1,11 +1,9 @@
 {% extends 'core/base.html' %}
 
-{% block header %}
-    Seccion de presos
-{% endblock header %}
-
 {% block main %}
-    <button><a href="{% url 'presos:presos_create' %}">Agregar preso</a></button>
-    <button><a href="{% url 'presos:presos_list' %}">Listar presos</a></button>
-    <button><a href="{% url 'presos:index' %}">Atras</a></button>
+    <div style="text-align: center;">
+        <h2>Sección de Presos</h2>
+        <button><a href="{% url 'presos:presos_create' %}">Agregar Preso</a></button>
+        <button><a href="{% url 'presos:presos_list' %}">Listar Presos</a></button>
+    </div>
 {% endblock main %}

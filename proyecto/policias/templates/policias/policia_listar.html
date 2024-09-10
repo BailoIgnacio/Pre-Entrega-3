@@ -1,20 +1,20 @@
 {% extends 'core/base.html' %}
 
 {% block header %}
-    Lista de policias registrados
+    Lista de Policías Registrados
 {% endblock header %}
 
 {% block main %}
-<form action="{% url 'policias:policia_listar' %}" method="get">
-    <input type="text" name="q" placeholder="Buscar...">
-    <button type="submit">Buscar</button>
-{% for policia in policias %}
-    <li>{{ policia.nombre }} {{ policia.apellido }} - Nacimiento: {{ policia.nacimiento }}</li>
-    
-{% endfor %}
-<button><a href="{% url 'policias:index' %}">Atras</a></button>
+    <div style="text-align: left;">
+        <form action="{% url 'policias:policia_listar' %}" method="get">
+            <input type="text" name="q" placeholder="Buscar...">
+            <button type="submit">Buscar</button>
+        </form>
+        <ul>
+            {% for policia in policias %}
+                <li>{{ policia.nombre }} {{ policia.apellido }} - Nacimiento: {{ policia.nacimiento }}</li>
+            {% endfor %}
+        </ul>
+        <button><a href="{% url 'policias:index' %}">Atrás</a></button>
+    </div>
 {% endblock main %}
-
-
-
-

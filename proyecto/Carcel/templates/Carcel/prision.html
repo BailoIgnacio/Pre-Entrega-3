@@ -1,12 +1,9 @@
 {% extends 'core/base.html' %}
 
-{% block header %}
-    Agregar carcel
-{% endblock header %}
-
 {% block main %}
-    <button><a href="{% url 'presos:prision_create' %}">Agregar carcel</a></button>
-    <button><a href="{% url 'presos:prision_list' %}">Listar carcel</a></button>
-    <button><a href="{% url 'presos:index' %}">Atras</a></button>
+    <div style="text-align: center;">
+        <h2>Sección de Prisiones</h2>
+        <button><a href="{% url 'presos:prision_create' %}">Agregar Prisión</a></button>
+        <button><a href="{% url 'presos:prision_list' %}">Listar Prisiones</a></button>
+    </div>
 {% endblock main %}
-<header>

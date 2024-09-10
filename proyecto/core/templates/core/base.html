@@ -3,36 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoderHouse</title>
+    <title>Registros de Seguridad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #007bff;
+            padding: 1rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+        form {
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
-<body style="display: grid; justify-items: center; align-items: center; height: 100vh;">
+<body>
 
     <header>
-        <h1>
-            {% block header %}      
-            {% endblock header %}
-        </h1>
-        
+        <h1>Registros de Seguridad</h1>
     </header>
 
-  
+    <nav>
+        <a href="{% url 'core:index' %}">Inicio</a>
+        <a href="{% url 'policias:index' %}">Policías</a>
+        <a href="{% url 'presos:preso' %}">Presos</a>
+        <a href="{% url 'presos:prision' %}">Prisiones</a>
+    </nav>
+
     <main>
-
-        {% block main %}
-            
-        {% endblock main %}
-
+        {% block main %}{% endblock main %}
     </main>
 
-  
     <footer>
-
-        {% include 'core/componentes/footer.html' %}
-
+        &copy; 2024 Gestión de Seguridad / Ignacio Bailo
     </footer>
-
-
-
 
 </body>
 </html>

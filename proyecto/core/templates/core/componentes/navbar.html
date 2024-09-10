@@ -1,3 +1,5 @@
-<navbar style="display: flex; justify-content:  center; padding-bottom: 10vh;">
-    <button><a href="{% url 'presos:index' %}">Entrar</a></button>
-</navbar>
+<nav>
+    <a href="{% url 'presos:index' %}">Inicio</a>
+    <a href="{% url 'policias:index' %}">Policías</a>
+    <a href="{% url 'presos:prision' %}">Prisiones</a>
+</nav>

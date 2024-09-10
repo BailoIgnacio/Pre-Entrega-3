@@ -1,14 +1,9 @@
 {% extends 'core/base.html' %}
 
-{% block header %}
-    Seccion de policias
-{% endblock header %}
-
 {% block main %}
-    <button><a href="{% url 'policias:policia_create' %}">Agregar policia</a></button>
-    <button><a href="{% url 'policias:policia_listar' %}">Listar policias</a></button>
-    <button><a href="{% url 'presos:index' %}">Atras</a></button>
+    <div style="text-align: center;">
+        <h2>Sección de Policías</h2>
+        <button><a href="{% url 'policias:policia_create' %}">Agregar Policía</a></button>
+        <button><a href="{% url 'policias:policia_listar' %}">Listar Policías</a></button>
+    </div>
 {% endblock main %}
-<header>
-
-
