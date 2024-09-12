@@ -14,6 +14,8 @@
             {% for prision in prisiones %}
                 <li>{{ prision.nombre }}</li>
                     <a href="{% url 'presos:prision_detail' prision.id%}">Detalle</a>
+                    <a href="{% url 'presos:prision_update' prision.id%}">Cambiar</a>
+                    <a href="{% url 'presos:prision_confirm_delete' prision.id %}">Borrar</a>
             {% empty %}
             <p>No hay registro</p>
             {% endfor %}

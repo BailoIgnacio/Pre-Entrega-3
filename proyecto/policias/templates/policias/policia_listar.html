@@ -14,6 +14,8 @@
             {% for policia in policias %}
                 <li>{{ policia.nombre}} {{ policia.apellido }} - Nacimiento: {{ policia.nacimiento }}
                     <a href="{% url 'policias:policia_detail' policia.id%}">Detalles</a>
+                    <a href="{% url 'policias:policia_update' policia.id %}">Cambiar</a>
+                    <a href="{% url 'policias:policia_confirm_delete' policia.id %}">Borrar</a>
                 </li>
             {% empty %}
             <p>No hay registro</p>

@@ -68,3 +68,42 @@ def prision_detail(request, pk: int):
     query = Prision.objects.get(id=pk)
     context = {"object": query}
     return render(request, "Carcel/prision_detail.html", context)
+
+def presos_update(request, pk:int):
+    query = Presos.objects.get(id=pk)
+    if request.method == "GET":
+        form = PresosForm(instance=query)
+
+    if request.method == "POST":
+        form = PresosForm(request.POST, instance=query)
+        if form.is_valid():
+            form.save()
+            return redirect("presos:presos_list")
+    return render(request, "Carcel/presos_update.html", {"form": form})
+
+def prision_update(request, pk:int):
+    query = Prision.objects.get(id=pk)
+    if request.method == "GET":
+        form = PrisionForm(instance=query)
+
+    if request.method == "POST":
+        form = PrisionForm(request.POST, instance=query)
+        if form.is_valid():
+            form.save()
+            return redirect("presos:prision_list")
+    return render(request, "Carcel/prision_update.html", {"form": form})
+
+
+def presos_confirm_delete(request, pk:int):
+    query = Presos.objects.get(id=pk)
+    if request.method == "POST":
+        query.delete()
+        return redirect("presos:presos_list")
+    return render(request, "Carcel/presos_confirm_delete.html", {"object": query})
+
+def prision_confirm_delete(request, pk:int):
+    query = Prision.objects.get(id=pk)
+    if request.method == "POST":
+        query.delete()
+        return redirect("presos:prision_list")
+    return render(request,"Carcel/prision_confirm_delete.html")

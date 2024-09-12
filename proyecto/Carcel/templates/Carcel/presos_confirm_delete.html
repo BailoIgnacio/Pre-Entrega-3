@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Lista de presos: Borrar preso
+{% endblock header %}
+
+{% block main %}
+    <div style="text-align: left;">
+        <ul>
+            <p>¿Esta seguro que desea eliminar a este preso? {{object.nombre}} {{object.apellido}}</p>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit">Confirmar</button>
+            </form>
+        </ul>
+        <button><a href="{% url 'presos:presos_list' %}">Atras</a></button>
+    </div>
+
+{% endblock main %}

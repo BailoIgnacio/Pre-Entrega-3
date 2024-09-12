@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Lista de carceles: Borrar prision
+{% endblock header %}
+
+{% block main %}
+    <div style="text-align: left;">
+        <ul>
+            <p>¿Esta seguro que desea eliminar esta carcel? {{object.nombre}}</p>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit">Confirmar</button>
+            </form>
+        </ul>
+        <button><a href="{% url 'presos:prision_list' %}">Atras</a></button>
+    </div>
+
+{% endblock main %}

@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Lista de policias: Borrar policia
+{% endblock header %}
+
+{% block main %}
+    <div style="text-align: left;">
+        <ul>
+            <p>¿Esta seguro que desea eliminar a este policia? {{object.nombre}} {{object.apellido}}</p>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit">Confirmar</button>
+            </form>
+        </ul>
+        <button><a href="{% url 'policias:policia_listar' %}">Atras</a></button>
+    </div>
+
+{% endblock main %}

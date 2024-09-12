@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Agregar Nueva Prisión
+{% endblock header %}
+
+{% block main %}
+    <div style="text-align: center;">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Cambiar</button>
+        </form>
+        <button><a href="{% url 'presos:prision_list' %}">Atrás</a></button>
+    </div>
+{% endblock main %}

@@ -30,3 +30,22 @@ def policia_detail(request, pk:int):
     query = Policia.objects.get(id=pk)
     context = {"object": query}
     return render(request, "policias/policia_detail.html", context)
+
+def policia_update(request, pk:int):
+    query = Policia.objects.get(id=pk)
+    if request.method == "GET":
+        form = PoliciaForm(instance=query)
+
+    if request.method == "POST":
+        form = PoliciaForm(request.POST, instance=query)
+        if form.is_valid():
+            form.save()
+            return redirect("policias:policia_listar")
+    return render(request, "policias/policia_update.html", {"form": form})
+
+def prolicia_confirm_delete(request, pk:int):
+    query = Policia.objects.get(id=pk)
+    if request.method == "POST":
+        query.delete()
+        return redirect("policias:policia_listar")
+    return render(request,"policias/policia_confirm_delete.html")
