@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Lista de presos: Detalles
+{% endblock header %}
+
+{% block main %}
+    <div style="text-align: left;">
+        <ul>
+            <li>Nombre: {{object.nombre}}</li>
+            <li>Apellido: {{object.apellido}}</li>
+            <li>Nacimiento: {{object.nacimiento}}</li>
+            <li>Descripcion: {{object.descripcion}}</li>
+        </ul>
+        <button><a href="{% url 'presos:presos_list' %}">Atras</a></button>
+    </div>
+
+{% endblock main %}

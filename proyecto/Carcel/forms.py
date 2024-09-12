@@ -21,5 +21,6 @@ class PresosForm(forms.ModelForm):
     class Meta:
         model = Presos
         fields = "__all__"
+        widgets = {"nacimiento": forms.DateInput(attrs={"type": "date"})}
 
    

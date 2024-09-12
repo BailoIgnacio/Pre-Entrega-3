@@ -5,6 +5,7 @@ class PoliciaForm(forms.ModelForm):
     class Meta:
         model = Policia
         fields = "__all__"
+        widgets = {"nacimiento": forms.DateInput(attrs={"type": "date"})}
 
     def clean_nombre(self):
         nombre: str = self.cleaned_data.get("nombre", "")

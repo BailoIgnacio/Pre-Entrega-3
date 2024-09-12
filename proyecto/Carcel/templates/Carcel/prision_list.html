@@ -13,6 +13,8 @@
         <ul>
             {% for prision in prisiones %}
                 <li>{{ prision.nombre }}</li>
+            {% empty %}
+            <p>No hay registro</p>
             {% endfor %}
         </ul>
         <button><a href="{% url 'presos:prision' %}">Atrás</a></button>
