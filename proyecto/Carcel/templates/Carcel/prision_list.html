@@ -13,6 +13,7 @@
         <ul>
             {% for prision in prisiones %}
                 <li>{{ prision.nombre }}</li>
+                    <a href="{% url 'presos:prision_detail' prision.id%}">Detalle</a>
             {% empty %}
             <p>No hay registro</p>
             {% endfor %}

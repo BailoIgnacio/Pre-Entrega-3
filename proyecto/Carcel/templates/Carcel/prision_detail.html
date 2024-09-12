@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Lista de Prisiones
+{% endblock header %}
+
+{% block main %}
+    <div style="text-align: left;">
+        
+        <ul>
+            <li>Nombre: {{object.nombre}}</li>
+        </ul>
+        <button><a href="{% url 'presos:prision_list' %}">Atrás</a></button>
+    </div>
+{% endblock main %}

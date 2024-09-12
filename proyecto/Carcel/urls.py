@@ -14,4 +14,5 @@ urlpatterns = [
     path("presos/create", views.presos_create, name="presos_create"),
     path("presos/list", views.presos_list, name="presos_list"),
     path("presos/detail/<int:pk>", views.presos_detail, name="presos_detail"),
+    path("prision/detail/<int:pk>", views.prision_detail, name="prision_detail")
 ]

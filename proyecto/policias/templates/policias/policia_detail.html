@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Lista de Policías Registrados
+{% endblock header %}
+
+{% block main %}
+    <div style="text-align: left;">
+        </form>
+        <ul>
+           <li>Nombre: {{object.nombre}}</li>
+           <li>Apellido: {{object.apellido}}</li>
+           <li>Nacimiento: {{object.nacimiento}}</li>
+        </ul>
+        <button><a href="{% url 'policias:policia_listar' %}">Atrás</a></button>
+    </div>
+{% endblock main %}

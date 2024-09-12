@@ -63,3 +63,8 @@ def presos_detail(request, pk: int):
     query = Presos.objects.get(id=pk)
     context = {"object": query}
     return render(request, "Carcel/presos_detail.html", context)
+
+def prision_detail(request, pk: int):
+    query = Prision.objects.get(id=pk)
+    context = {"object": query}
+    return render(request, "Carcel/prision_detail.html", context)

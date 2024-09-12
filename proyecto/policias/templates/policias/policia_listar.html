@@ -13,7 +13,7 @@
         <ul>
             {% for policia in policias %}
                 <li>{{ policia.nombre}} {{ policia.apellido }} - Nacimiento: {{ policia.nacimiento }}
-                    <a href="#">Detalle</a>
+                    <a href="{% url 'policias:policia_detail' policia.id%}">Detalles</a>
                 </li>
             {% empty %}
             <p>No hay registro</p>

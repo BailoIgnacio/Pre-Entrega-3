@@ -25,3 +25,8 @@ def mostrar_policias(request):
     else:
         policias = Policia.objects.all()
     return render(request, 'policias/policia_listar.html', {'policias': policias})
+
+def policia_detail(request, pk:int):
+    query = Policia.objects.get(id=pk)
+    context = {"object": query}
+    return render(request, "policias/policia_detail.html", context)
