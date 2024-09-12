@@ -13,6 +13,12 @@
             flex-direction: column;
             min-height: 100vh;
         }
+        li {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
         header {
             background-color: #343a40;
             color: white;
@@ -59,8 +65,21 @@
             color: white;
             text-decoration: none;
         }
-        form {
+        li a {
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            color: black;
             margin-bottom: 2rem;
+        }
+        li a:nth-child(3){
+            background-color: rgb(255, 105, 105);
+        }
+        li a:nth-child(2){
+            background-color: rgb(28, 223, 28);
+        }
+        li a:nth-child(1){
+            background-color: #007bff;
         }
     </style>
 </head>
