@@ -6,18 +6,21 @@
 
 {% block main %}
     <div style="text-align: left;">
-        <form action="{% url 'presos:prision_list' %}" method="get">
+        <form action="{% url 'presos:prision_list' %}" method="get" class="form-vertical">
             <input type="text" name="q" placeholder="Buscar...">
             <button type="submit">Buscar</button>
         </form>
         <ul>
             {% for prision in prisiones %}
-                <li>{{ prision.nombre }}</li>
-                    <a href="{% url 'presos:prision_detail' prision.id%}">Detalle</a>
-                    <a href="{% url 'presos:prision_update' prision.id%}">Cambiar</a>
-                    <a href="{% url 'presos:prision_confirm_delete' prision.id %}">Borrar</a>
+                <li>{{ prision.nombre }}
+                    <div>
+                        <a href="{% url 'presos:prision_detail' prision.id %}">Detalle</a>
+                        <a href="{% url 'presos:prision_update' prision.id %}">Cambiar</a>
+                        <a href="{% url 'presos:prision_confirm_delete' prision.id %}">Borrar</a>
+                    </div>
+                </li>
             {% empty %}
-            <p>No hay registro</p>
+                <p>No hay registro</p>
             {% endfor %}
         </ul>
         <button><a href="{% url 'presos:prision' %}">Atrás</a></button>

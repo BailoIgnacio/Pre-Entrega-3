@@ -14,9 +14,11 @@
         <ul>
         {% for preso in presos %}
             <li>{{ preso.nombre | upper}}, {{ preso.apellido }}
+                <div>
                 <a href="{% url 'presos:presos_detail' preso.pk %}">Detalles</a>
                 <a href="{% url 'presos:presos_update' preso.pk %}">Cambiar</a>
                 <a href="{% url 'presos:presos_confirm_delete' preso.pk %}">Borrar</a>
+                </div>
             </li>
         {% empty %}
             <p>No hay registros</p>
