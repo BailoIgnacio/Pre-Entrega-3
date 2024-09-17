@@ -1,5 +1,23 @@
 <nav>
-    <a href="{% url 'presos:index' %}">Inicio</a>
-    <a href="{% url 'policias:index' %}">Policías</a>
-    <a href="{% url 'presos:prision' %}">Prisiones</a>
+    <div class="nav-left">
+        <a href="{% url 'core:index' %}">Inicio</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'policias:index' %}">Policías</a>
+            <a href="{% url 'presos:preso' %}">Presos</a>
+            <a href="{% url 'presos:prision' %}">Prisiones</a>
+        {% endif %}
+    </div>
+    <div class="nav-right">
+        {% if user.is_authenticated %}
+            <a href="#">{{ user.username }}</a>
+            <form action="{% url 'core:logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">
+                  Logout
+                </button>
+            </form>
+        {% else %}
+            <a href="{% url 'core:login' %}" class="button">Login</a>
+        {% endif %}
+    </div>
 </nav>

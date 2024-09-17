@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Iniciar Sesión
+{% endblock header %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit">Iniciar sesión</button>
+    </form>
+{% endblock main %}

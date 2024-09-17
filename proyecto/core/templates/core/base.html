@@ -45,13 +45,35 @@
         nav {
             display: flex;
             justify-content: center;
+            align-items: center;
             background-color: #007bff;
             padding: 1rem;
+            position: relative;
+        }
+        .nav-left {
+            display: flex;
+            gap: 1rem;
+        }
+        .login-button {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
         }
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 1rem;
+        }
+        .login-button a {
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .login-button a:hover {
+            background-color: #0056b3;
         }
         button {
             padding: 0.5rem 1rem;
@@ -71,7 +93,6 @@
             padding: 5px;
             border-radius: 5px;
             color: black;
-            
         }
         li a:nth-child(3){
             background-color: rgb(255, 105, 105);
@@ -91,10 +112,28 @@
     </header>
 
     <nav>
-        <a href="{% url 'core:index' %}">Inicio</a>
-        <a href="{% url 'policias:index' %}">Policías</a>
-        <a href="{% url 'presos:preso' %}">Presos</a>
-        <a href="{% url 'presos:prision' %}">Prisiones</a>
+        <div class="nav-left">
+            <a href="{% url 'core:index' %}">Inicio</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'policias:index' %}">Policías</a>
+                <a href="{% url 'presos:preso' %}">Presos</a>
+                <a href="{% url 'presos:prision' %}">Prisiones</a>
+            {% endif %}
+        </div>
+        <div class="login-button">
+            {% if user.is_authenticated %}
+                <a href="#">{{ user.username }}</a>
+                <form action="{% url 'core:logout' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" style="background: none; border: none; color: white; cursor: pointer; padding: 0;">
+                        Logout
+                    </button>
+                </form>
+            {% else %}
+                <a href="{% url 'core:login' %}">Login</a>
+            {% endif %}
+        </div>
+        
     </nav>
 
     <main>
