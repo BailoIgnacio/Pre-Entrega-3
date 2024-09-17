@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Presos, Policia, Prision
 from .forms import PrisionForm, PresosForm
 
 def index(request):
     return render(request, "Carcel/index.html")
 
-
+@login_required
 def presos_list(request):
     lista_presos = Presos.objects.all()
     contexto = {"presos" : lista_presos}

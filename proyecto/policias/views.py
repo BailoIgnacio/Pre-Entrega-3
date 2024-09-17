@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from .forms import PoliciaForm
 from .models import Policia
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render(request, "policias/index.html")
 
+@login_required
 def policia_create(request):
     if request.method == "GET":
         formulario = PoliciaForm()

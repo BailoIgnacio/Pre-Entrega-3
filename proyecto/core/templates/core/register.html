@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block header %}
-    Iniciar Sesión
+    Nueva cuenta
 {% endblock header %}
 
 {% block main %}
@@ -10,10 +10,6 @@
         <table>
             {{ form.as_table }}
         </table>
-        <button type="submit">Iniciar sesión</button>
-    
-
-    <p>¿No tenes cuenta? <a href="{% url 'core:register' %}">Registrate aca</a></p>
-
+        <button type="submit">Registrarse</button>
     </form>
 {% endblock main %}
