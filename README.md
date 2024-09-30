@@ -36,4 +36,9 @@ Sigue los siguientes pasos para configurar el entorno y ejecutar el proyecto loc
     contraseña = 123
 
 
+# About Me:
+Me llamo ignacio Bailo y tengo 19 años. Actualmente estoy cursando el primer año de la carrera ingenieria informatica en la Universidad Argentina de la Empresa.
+Me interesa bastante el area de programar ya que siento que es algo util y por algo en lo que yo podria trabajar, por lo menos los primeros años de mi cursada.
+Mi idea es intentar encontrar trabajo con algo relacionado a mi carrera asi puedo pagar mis estudios y ademas ganar experiencia laboral. Principalmente me gustaria empezar a trabajar algo de programacion, por eso ingrese a este curso para empezar aprendiendo un idioma y voy a seguir ingresando a mas.
+Agradezo por estas clases que nos dieron sobre python ya que aprendi mucho y ademas me sirvio un monton para la facultad.
 
